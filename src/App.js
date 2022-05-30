@@ -1,6 +1,3 @@
-import React from 'react';
-import { Link } from "react-router-dom";
-
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -17,7 +14,6 @@ export default function App() {
       <Projects />
       <Contact />
       <Footer />
-      <Link to="/Resume">Resume</Link>
     </div>
   );
 }
