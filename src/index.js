@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route index element={<App />} />
+      <Route path='/' element={<App />} />
       <Route path='Resume' element={<Resume />} />
       <Route path='*' element={<h1>404: Page Does Not Exist!</h1>} />
     </Routes>
