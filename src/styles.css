@@ -1,34 +1,171 @@
 * {
   box-sizing: border-box;
+  --main-blue: #328CC1;
+  --dark-blue: #0B3C5D;
+  --accent-red: #C2464A;
+  --background-color: #EFEFEF;
 }
 
-body, html, h1, p, button {
+body, html, h1, h2, h3, p, button {
   margin: 0;
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-  overflow-y: scroll;
+html, body {
+  height: 100%;
+  width: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+  /* overflow-x: hidden;
+  overflow-y: scroll; */
+}
+
+body {
+  background-color: var(--background-color);
+  font-size: 12px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+h1 {
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 6rem;
+  letter-spacing: 0.5rem;
+}
+
+
+/***********/
 /* HEADER */
+/***********/
 
 .header--nav {
   position: fixed;
   transition: 0.3s linear;
   top: 0;
-  background-color: red;
+  background-color: var(--background-color);
   width: 100%;
+  height: 6vh;
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header--nav.hidden {
-  top: -40px;
+  top: -6vh;
 }
+
+.nav--link {
+  color: #3E3E3E;
+  text-decoration: none;
+  margin-left: 7vw;
+  font-size: 1.25rem;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.25rem;
+}
+
+.nav--link:hover:not(.-home, .-resume) {
+  text-decoration: underline;
+}
+
+.nav--link.-home {
+  margin-right: auto;
+  font-size: 2rem !important;
+}
+
+.nav--link.-resume {
+  padding: 3px 10px;
+  margin-right: 7vw;
+  color: #C29E1F;
+  border: solid 2px #C29E1F;
+  border-radius: 10px;
+}
+
+
+/********/
+/* HERO */
+/********/
+
+.hero {
+  background-image: url(./assets/man-on-computer.png), url(./assets/hero-design.png);
+  background-position: 90% 50%, bottom;
+  background-repeat: no-repeat;
+}
+
+.hero--title-section {
+  padding-top: 20vh;
+  padding-left: 8vw;
+  background-image: url(./assets/fancy-underline.png);
+  background-repeat: no-repeat;
+  background-position: 7% 67%;
+  background-size: 535px auto;
+  background-attachment: local;
+}
+
+.hero--introduction {
+  color: var(--accent-red);
+  font-size: 1.35rem;
+  letter-spacing: .2rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+.hero--description {
+  font-size: 1.6rem;
+  font-family: 'Ubuntu', sans-serif;
+  margin-top: 7vh;
+  width: 45vh;
+  line-height: 150%;
+}
+
+
+/*********/
+/* ABOUT */
+/*********/
+
+.about {
+  background-color: var(--main-blue);
+  position: relative;
+}
+
+.about--title {
+  position: relative;
+  color: var(--background-color);
+  padding-left: 8vw;
+  padding-top: 10vh;
+  z-index: 50;
+}
+
+.about--text-container {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background-color: var(--dark-blue);
+  border-radius: 30px;
+  top: 17vh;
+  left: 5vw;
+}
+
+.about--text-container.-accent {
+  background-color: var(--accent-red);
+  top: 25vh;
+  left: 15vw;
+}
+
+.about--text {
+  margin: 20%;
+}
+
+
 
 /* TEMP */
 
 section {
   height: 100vh;
 }
+
+
+

@@ -26,11 +26,11 @@ export default function Header() {
   return(
     <header className="header">
       <nav className={navShown ? 'header--nav' : 'header--nav hidden'}>
-        <Link to="/">Home</Link>
-        <Link to="/Resume">Resume</Link>
-        <a href='#about'>About</a>
-        <a href='#projects'>Projects</a>
-        <a href='#contact'>Contact</a>
+        <Link to="/" className='nav--link -home'>&lt;SK /&gt;</Link>
+        <a href='#about' className='nav--link -about'>About</a>
+        <a href='#projects' className='nav--link -projects'>Projects</a>
+        <a href='#contact' className='nav--link -contact'>Contact</a>
+        <Link to="/Resume" className='nav--link -resume'>Resume</Link>
       </nav>
     </header>
   );
