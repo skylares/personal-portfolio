@@ -6,7 +6,6 @@ export default function Header() {
   const [navShown, setNavShown] = useState(true);
   const [yPosition, setYPosition] = useState(0);
 
-  // Checks if user is scrolling, and sets state based on direction
   const trackYPos = () => {
     if (typeof window !== 'undefined') {
       if (window.scrollY < yPosition) setNavShown(true);
@@ -21,12 +20,19 @@ export default function Header() {
 
       return () => window.removeEventListener('scroll', trackYPos);
     }
-  }, [yPosition]);
+  }, [yPosition, trackYPos]);
+
+  const spanner = () => {
+    let arr = ["<", "S", "K", "/", ">"];
+    return arr.map((char, i) => <span key={i}className='header--home-char'>{char}</span>);
+  }
 
   return(
     <header className="header">
       <nav className={navShown ? 'header--nav' : 'header--nav hidden'}>
-        <Link to="/" className='nav--link -home'>&lt;SK /&gt;</Link>
+        <Link to="/" className='nav--link -home'>
+          {spanner()}
+        </Link>
         <a href='#about' className='nav--link -about'>About</a>
         <a href='#projects' className='nav--link -projects'>Projects</a>
         <a href='#contact' className='nav--link -contact'>Contact</a>

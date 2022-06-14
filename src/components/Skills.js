@@ -1,8 +1,9 @@
 import React from 'react';
-import {ReactComponent as HtmlLogo} from '../assets/logo-html.svg';
-import {ReactComponent as CssLogo} from '../assets/logo-css.svg';
-import {ReactComponent as JavascriptLogo} from '../assets/logo-js.svg';
-import {ReactComponent as ReactLogo} from '../assets/logo-react.svg';
+
+import HtmlLogo from '../assets/logo-html.svg';
+import CssLogo from '../assets/logo-css.svg';
+import JavascriptLogo from '../assets/logo-js.svg';
+import ReactLogo from '../assets/logo-react.svg';
 
 export default function Skills() {
   return (
@@ -10,10 +11,10 @@ export default function Skills() {
 
       <h1 className="skills--title">SKILLS</h1>
       <div className='skills--container'>
-        <HtmlLogo className='skills--icon'/>
-        <CssLogo className='skills--icon'/>
-        <JavascriptLogo className='skills--icon'/>
-        <ReactLogo className='skills--icon'/>
+        <img src={HtmlLogo} className='skills--icon' alt='html logo'></img>
+        <img src={CssLogo} className='skills--icon' alt='css logo'></img>
+        <img src={JavascriptLogo} className='skills--icon' alt='javascript logo'></img>
+        <img src={ReactLogo} className='skills--icon' alt='react logo'></img>
       </div>
 
     </section>

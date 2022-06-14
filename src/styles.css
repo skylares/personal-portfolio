@@ -1,9 +1,9 @@
 * {
   box-sizing: border-box;
-  --main-blue: #328CC1;
-  --dark-blue: #0B3C5D;
-  --accent-red: #C2464A;
-  --background-color: #EFEFEF;
+  --main-color: #7616F4;
+  --main-accent: #F5A02F;
+  --background-color: rgb(233, 230, 230);
+  --dark-text: #1A0536;
 }
 
 body, html, h1, h2, h3, p, button {
@@ -18,12 +18,13 @@ html, body {
 
 html {
   scroll-behavior: smooth;
-  /* overflow-x: hidden;
-  overflow-y: scroll; */
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 body {
   background-color: var(--background-color);
+  color: var(--dark-text);
   font-size: 12px;
   font-family: 'Ubuntu', sans-serif;
 }
@@ -47,10 +48,11 @@ h1 {
   background-color: var(--background-color);
   width: 100%;
   height: 6vh;
-  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 4px 2px -2px var(--dark-text);
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 }
 
 .header--nav.hidden {
@@ -58,7 +60,6 @@ h1 {
 }
 
 .nav--link {
-  color: #3E3E3E;
   text-decoration: none;
   margin-left: 7vw;
   font-size: 1.25rem;
@@ -73,15 +74,24 @@ h1 {
 
 .nav--link.-home {
   margin-right: auto;
-  font-size: 2rem !important;
+  font-size: 1.75rem !important;
+}
+
+.header--home-char:hover{
+  color: var(--main-accent);
 }
 
 .nav--link.-resume {
   padding: 3px 10px;
   margin-right: 7vw;
-  color: #C29E1F;
-  border: solid 2px #C29E1F;
-  border-radius: 10px;
+  color: var(--main-accent);
+  border: solid 2px var(--main-accent);
+  border-radius: 25px;
+  background-color: whitesmoke;
+}
+
+.nav--link.-resume:hover {
+  background-color: #ebbf874b;
 }
 
 
@@ -93,32 +103,39 @@ h1 {
   background-image: url(./assets/man-on-computer.png), url(./assets/hero-design.png);
   background-position: 90% 50%, bottom;
   background-repeat: no-repeat;
+  height: 100vh;
 }
 
 .hero--title-section {
+  position: fixed;
+  z-index: -1;
   padding-top: 20vh;
   padding-left: 8vw;
   background-image: url(./assets/fancy-underline.png);
   background-repeat: no-repeat;
-  background-position: 7% 67%;
-  background-size: 535px auto;
-  background-attachment: local;
+  background-position: 110% 67%;
+  background-size: 450px auto;
+  background-attachment: scroll;
+}
+
+.hero--title-section-hidden {
+  opacity: 100%;
 }
 
 .hero--introduction {
-  color: var(--accent-red);
+  color: var(--main-accent);
   font-size: 1.35rem;
-  letter-spacing: .2rem;
+  letter-spacing: 0.3rem;
   font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
 
 .hero--description {
   font-size: 1.6rem;
-  font-family: 'Ubuntu', sans-serif;
   margin-top: 7vh;
   width: 45vh;
   line-height: 150%;
+  letter-spacing: -0.05rem;
 }
 
 
@@ -127,45 +144,62 @@ h1 {
 /*********/
 
 .about {
-  background-color: var(--main-blue);
-  position: relative;
-}
-
-.about--title {
-  position: relative;
+  background-color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15vw;
   color: var(--background-color);
-  padding-left: 8vw;
-  padding-top: 10vh;
-  z-index: 50;
-}
+  height: 50vh;
 
-.about--text-container {
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  background-color: var(--dark-blue);
-  border-radius: 30px;
-  top: 17vh;
-  left: 5vw;
-}
-
-.about--text-container.-accent {
-  background-color: var(--accent-red);
-  top: 25vh;
-  left: 15vw;
+  background: linear-gradient(var(--main-color), #6a14dc, var(--main-color), #842df5);
 }
 
 .about--text {
-  margin: 20%;
+  font-size: 1.5rem;
+  margin: 5vh 5vw;
+  font-family: 'Lato', sans-serif;
 }
+
+.about--title {
+  margin-top: 5vh;
+}
+
+.skills {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.skills--icon {
+  height: 100px;
+  width: 100px;
+  margin: 20px 40px;
+}
+
+.skills--icon:hover {
+  margin-bottom: 10px;
+}
+
+
+/************/
+/* PROJECTS */
+/************/
+
+.projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 
 
 /* TEMP */
 
-section {
-  height: 100vh;
-}
-
-
-
+/* section {
+  min-height: 100vh;
+} */
