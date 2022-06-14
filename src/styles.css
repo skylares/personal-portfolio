@@ -1,0 +1,205 @@
+* {
+  box-sizing: border-box;
+  --main-color: #7616F4;
+  --main-accent: #F5A02F;
+  --background-color: rgb(233, 230, 230);
+  --dark-text: #1A0536;
+}
+
+body, html, h1, h2, h3, p, button {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--dark-text);
+  font-size: 12px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+h1 {
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 6rem;
+  letter-spacing: 0.5rem;
+}
+
+
+/***********/
+/* HEADER */
+/***********/
+
+.header--nav {
+  position: fixed;
+  transition: 0.3s linear;
+  top: 0;
+  background-color: var(--background-color);
+  width: 100%;
+  height: 6vh;
+  box-shadow: 1px 4px 2px -2px var(--dark-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.header--nav.hidden {
+  top: -6vh;
+}
+
+.nav--link {
+  text-decoration: none;
+  margin-left: 7vw;
+  font-size: 1.25rem;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.25rem;
+}
+
+.nav--link:hover:not(.-home, .-resume) {
+  text-decoration: underline;
+}
+
+.nav--link.-home {
+  margin-right: auto;
+  font-size: 1.75rem !important;
+}
+
+.header--home-char:hover{
+  color: var(--main-accent);
+}
+
+.nav--link.-resume {
+  padding: 3px 10px;
+  margin-right: 7vw;
+  color: var(--main-accent);
+  border: solid 2px var(--main-accent);
+  border-radius: 25px;
+  background-color: whitesmoke;
+}
+
+.nav--link.-resume:hover {
+  background-color: #ebbf874b;
+}
+
+
+/********/
+/* HERO */
+/********/
+
+.hero {
+  background-image: url(./assets/man-on-computer.png), url(./assets/hero-design.png);
+  background-position: 90% 50%, bottom;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.hero--title-section {
+  position: fixed;
+  z-index: -1;
+  padding-top: 20vh;
+  padding-left: 8vw;
+  background-image: url(./assets/fancy-underline.png);
+  background-repeat: no-repeat;
+  background-position: 110% 67%;
+  background-size: 450px auto;
+  background-attachment: scroll;
+}
+
+.hero--title-section-hidden {
+  opacity: 100%;
+}
+
+.hero--introduction {
+  color: var(--main-accent);
+  font-size: 1.35rem;
+  letter-spacing: 0.3rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+.hero--description {
+  font-size: 1.6rem;
+  margin-top: 7vh;
+  width: 45vh;
+  line-height: 150%;
+  letter-spacing: -0.05rem;
+}
+
+
+/*********/
+/* ABOUT */
+/*********/
+
+.about {
+  background-color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15vw;
+  color: var(--background-color);
+  height: 50vh;
+
+  background: linear-gradient(var(--main-color), #6a14dc, var(--main-color), #842df5);
+}
+
+.about--text {
+  font-size: 1.5rem;
+  margin: 5vh 5vw;
+  font-family: 'Lato', sans-serif;
+}
+
+.about--title {
+  margin-top: 5vh;
+}
+
+.skills {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.skills--icon {
+  height: 100px;
+  width: 100px;
+  margin: 20px 40px;
+}
+
+.skills--icon:hover {
+  margin-bottom: 10px;
+}
+
+
+/************/
+/* PROJECTS */
+/************/
+
+.projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+/* TEMP */
+
+/* section {
+  min-height: 100vh;
+} */
