@@ -1,7 +1,7 @@
 node_modules
 .DS_Store
 .cache/
-dist/
+.dist/
 .env
 coverage/
 !dist

@@ -1,27 +1,23 @@
 const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-
+  
   entry: './src/index.js',
-
   output: {
-    path: path.join(__dirname, '/dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
   },
 
-  devtool: 'inline-source-map',
-
-  devServer: {
-    historyApiFallback: true,
-  },
 
   plugins: [
     new HTMLWebpackPlugin({
       template: './public/index.html',
       filename: './index.html',
       favicon: './public/favicon.ico'
-    })
+    }),
+    new CleanWebpackPlugin()
   ],
 
   module: {
