@@ -6,7 +6,7 @@ module.exports = {
   
   entry: './src/index.js',
   output: {
-    filename: 'bundle.js',
+    filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist')
   },
 
@@ -34,13 +34,6 @@ module.exports = {
             ]
           }
         }
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
       },
       {
         test: /\.(svg|ico)$/,

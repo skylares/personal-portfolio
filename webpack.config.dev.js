@@ -9,4 +9,16 @@ module.exports = merge(commonConfig, {
   devServer: {
     historyApiFallback: true,
   },
+
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      },
+    ]
+  }
 });
