@@ -13,7 +13,7 @@ root.render(
       <Routes>
         <Route path='/' element={<App />} />
         <Route path='Resume' element={<Resume />} />
-        {/* <Route path='*' element={<h1>404: Page Does Not Exist!</h1>} /> */}
+        <Route path='*' element={<h1>404: Page Does Not Exist!</h1>} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
