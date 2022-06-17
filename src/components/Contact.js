@@ -58,42 +58,36 @@ export default function Contact() {
 
   return(
     <section className="contact" id="contact">
-      <h1>Contact</h1>
+      <h1 className='contact--title'>GET IN TOUCH</h1>
+      <p className='contact--subtitle'>Feel free to contact me by <a>email</a> or with the form below.</p>
       <form className='contact--form' name='contact--form' onSubmit={handleFormSubmit}>
+        <div>
+        <input 
+          className='contact--form-input -name'
+          placeholder='Your name'
+          name='name' 
+          type='text' 
+          value={formData.name} 
+          onChange={handleFormInput}
+        ></input>
+        <input 
+          className='contact--form-input -email'
+          placeholder='Your email'
+          name='email' 
+          type='email' 
+          value={formData.email} 
+          onChange={handleFormInput}
+        ></input>
+        </div>
+        <textarea 
+          className='contact--form-input -message'
+          placeholder='Your message'
+          name='message' 
+          value={formData.message} 
+          onChange={handleFormInput}
+        ></textarea>
 
-        <label className='contact--form-label -name'>
-          Name
-          <input 
-            className='contact--form-input -name'
-            name='name' 
-            type='text' 
-            value={formData.name} 
-            onChange={handleFormInput}
-          ></input>
-        </label>
-
-        <label className='contact--form-label -email'>
-          Email
-          <input 
-            className='contact--form-input -email'
-            name='email' 
-            type='email' 
-            value={formData.email} 
-            onChange={handleFormInput}
-          ></input>
-        </label>
-
-        <label className='contact--form-label -message'>
-          Message
-          <textarea 
-            className='contact--form-input -message'
-            name='message' 
-            value={formData.message} 
-            onChange={handleFormInput}
-          ></textarea>
-        </label>
-
-        <button className='contact--form-button'>submit</button>
+        <button className='contact--form-button'>SEND MESSAGE</button>
       </form>
     </section>
   );

@@ -1,9 +1,13 @@
 * {
   box-sizing: border-box;
+}
+
+:root {
   --main-color: #7616f4;
   --main-accent: #f5a02f;
   --dark-text: #1a0536;
-  --background-color: rgb(233, 230, 230);
+  --background-color: #F9F9F9;
+  /* rgb(233, 230, 230) */
 }
 
 body, html, h1, h2, h3, h4, p, button {
@@ -32,8 +36,9 @@ body {
 h1 {
   font-family: 'Jost', sans-serif;
   font-weight: 600;
-  font-size: 6rem;
+  font-size: 4rem;
   letter-spacing: 0.5rem;
+  text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
 }
 
 
@@ -121,6 +126,7 @@ h1 {
 
 .hero--name {
   margin-left: 8vw;
+  font-size: 6rem;
 }
 
 .hero--introduction {
@@ -176,6 +182,7 @@ h1 {
   margin: 5vh 5vw;
   font-family: 'Lato', sans-serif;
   letter-spacing: -0.01rem;
+  text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
 }
 
 .about--title {
@@ -189,15 +196,14 @@ h1 {
   flex-direction: column;
 }
 
+.skills > h1 {
+  color: var(--main-color);
+}
+
 .skills--icon {
   height: 100px;
   width: 100px;
   margin: 20px 40px;
-}
-
-.skills--icon:hover {
-  /* margin-bottom: 10px; */
-  transform: scale(1.1);
 }
 
 
@@ -236,19 +242,18 @@ h1 {
   background-color: var(--background-color);
   margin: 0px 40px;
   font-size: 2rem;
+  cursor: pointer;
 
-  box-shadow: 0px 1px 2px 0px rgba(26, 5, 54,0.3),
-            1px 2px 4px 0px rgba(26, 5, 54,0.3),
-            2px 4px 8px 0px rgba(26, 5, 54,0.3),
-            2px 4px 16px 0px rgba(26, 5, 54,0.3);
+  transition: box-shadow 250ms, transform 250ms;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 12px -6px rgba(0,0,0,0.11); 
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 12px -6px rgba(0,0,0,0.11);
 }
 
 .projects--project:hover {
+  transform: scaleX(1.01) scaleY(1.01);
 
-  box-shadow: 0px 1px 2px 0px rgba(26, 5, 54,0.7),
-            1px 2px 4px 0px rgba(26, 5, 54,0.7),
-            2px 4px 8px 0px rgba(26, 5, 54,0.7),
-            2px 4px 16px 0px rgba(26, 5, 54,0.7);
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 26px 7px rgba(0,0,0,0.5); 
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 26px 7px rgba(0,0,0,0.5);
 
 }
 
@@ -256,6 +261,100 @@ h1 {
   margin-top: 20%;
   font-size: 1.5rem;
 }
+
+
+/***********/
+/* CONTACT */
+/***********/
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact--title {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  color: var(--main-color);
+}
+
+.contact--subtitle {
+  font-size: 2rem;
+  margin-bottom: 75px;
+}
+
+.contact--subtitle > a {
+  border-bottom: 2px solid #f59f2f77;
+}
+
+.contact--subtitle > a:hover {
+  border-bottom: 2px solid var(--main-accent);
+  cursor: pointer;
+}
+
+.contact--form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact--form-input {
+  width: 20vw;
+  height: 3vh;
+  margin-right: 1vw;
+  padding: 20px;
+  border: 2px solid var(--background-color);
+  transition: border 500ms;
+  border-radius: 10px;
+  background-color: rgb(233, 230, 230);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.25rem;
+  outline-color: var(--main-color);
+}
+
+.contact--form-input:hover {
+  border: 2px solid #7616f44f;
+}
+
+.contact--form-input.-message {
+  width: 41vw;
+  height: 18vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  resize: none;
+}
+
+.contact--form-button {
+  border: none;
+  border-radius: 10px;
+  background-color: var(--main-color);
+  color: var(--background-color);
+  padding: 10px;
+  height: 50px;
+  width: 200px;
+  margin-bottom: 10vh;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-family: "Ubuntu", sans-serif;
+}
+
+
+/**********/
+/* FOOTER */
+/**********/
+
+.footer {
+  background-color: var(--main-color);
+  height: 10vh;
+}
+
+
+
+
+
+
+
 
 
 
@@ -269,4 +368,8 @@ h1 {
   background-color: var(--main-color);
   width: 150px;
   height: 4px;
+}
+
+.skills--icon:hover {
+  margin-bottom: 10px;
 }
