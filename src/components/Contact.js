@@ -11,7 +11,7 @@ export default function Contact() {
   );
   const [formErrors, setFormErrors] = useState({});
   const [formSubmitted, setFormSubmitted] = useState(false);
-
+  const [formFinished, setFormFinished] = useState(false);
 
   const handleFormInput = ({target}) => setFormData(prevFormData => (
     {
@@ -51,6 +51,7 @@ export default function Contact() {
       })
         .then(() => alert("Submitted succesfully, thank you!"))
         .then(() => setFormSubmitted(false))
+        .then(() => setFormFinished(true))
         .then(() => setFormData({name: "", email: "", message: ""}))
         .catch(error => alert(error));
     }
@@ -60,35 +61,50 @@ export default function Contact() {
     <section className="contact" id="contact">
       <h1 className='contact--title'>GET IN TOUCH</h1>
       <p className='contact--subtitle'>Feel free to contact me by <a>email</a> or with the form below.</p>
-      <form className='contact--form' name='contact--form' onSubmit={handleFormSubmit}>
-        <div>
-        <input 
-          className='contact--form-input -name'
-          placeholder='Your name'
-          name='name' 
-          type='text' 
-          value={formData.name} 
-          onChange={handleFormInput}
-        ></input>
-        <input 
-          className='contact--form-input -email'
-          placeholder='Your email'
-          name='email' 
-          type='email' 
-          value={formData.email} 
-          onChange={handleFormInput}
-        ></input>
-        </div>
-        <textarea 
-          className='contact--form-input -message'
-          placeholder='Your message'
-          name='message' 
-          value={formData.message} 
-          onChange={handleFormInput}
-        ></textarea>
 
-        <button className='contact--form-button'>SEND MESSAGE</button>
-      </form>
+      {formFinished 
+      ?  
+        <div className='contact--form'>succesfully submitted, thank you!</div>  
+      
+      :
+        <form className='contact--form' name='contact--form' onSubmit={handleFormSubmit}>
+          <div className='contact--form-top'>
+            <div>
+              {formErrors?.name ? <p className='error- -name'>Name required!</p> : <p className='error- -name'></p>}
+              <input 
+                className='contact--form-input -name'
+                placeholder={'Your name'}
+                name='name' 
+                type='text' 
+                value={formData.name} 
+                onChange={handleFormInput}
+              ></input>
+            </div>
+            <div>
+              {formErrors?.email ? <p className='error- -email'>Name required!</p> : <p className='error- -email'></p>}
+              <input 
+                className='contact--form-input -email'
+                placeholder='Your email'
+                name='email' 
+                type='email' 
+                value={formData.email} 
+                onChange={handleFormInput}
+              ></input>
+            </div>
+          </div>
+          <div>
+            {formErrors?.message ? <p className='error- -message'>Message required!</p> : <p className='error- -message'></p>}
+            <textarea 
+              className='contact--form-input -message'
+              placeholder='Your message'
+              name='message' 
+              value={formData.message} 
+              onChange={handleFormInput}
+            ></textarea>
+          </div>
+          <button className='contact--form-button'>SEND MESSAGE</button>
+        </form>
+      }
     </section>
   );
 }

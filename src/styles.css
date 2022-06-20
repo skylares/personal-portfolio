@@ -252,9 +252,8 @@ h1 {
 .projects--project:hover {
   transform: scaleX(1.01) scaleY(1.01);
 
-  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 26px 7px rgba(0,0,0,0.5); 
-  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 26px 7px rgba(0,0,0,0.5);
-
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 32px 12px rgba(0,0,0,0.34); 
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 32px 12px rgba(0,0,0,0.34);
 }
 
 .projects--project > p {
@@ -297,6 +296,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 50vh;
 }
 
 .contact--form-input {
@@ -326,7 +326,7 @@ h1 {
 }
 
 .contact--form-button {
-  border: none;
+  border: 2px solid var(--background-color);
   border-radius: 10px;
   background-color: var(--main-color);
   color: var(--background-color);
@@ -337,6 +337,24 @@ h1 {
   cursor: pointer;
   font-size: 1.25rem;
   font-family: "Ubuntu", sans-serif;
+  transition: border 250ms
+}
+
+.contact--form-button:hover {
+  border: 2px solid var(--main-accent);
+}
+
+.contact--form-top {
+  display: flex;
+}
+
+.error- {
+  height: 20px;
+}
+
+.error-.-message {
+  margin-bottom: -15px;
+  margin-top: 10px;
 }
 
 
@@ -346,12 +364,35 @@ h1 {
 
 .footer {
   background-color: var(--main-color);
-  height: 10vh;
+  height: 75px;
+}
+
+.footer > p {
+  color: var(--background-color);
+  font-size: 1rem;
+  padding-bottom: 10px;
+}
+
+.footer--creator {
+  padding-top: 15px;
+}
+
+.footer--link {
+  color: #f5a02f;
 }
 
 
+/**********/
+/* RESUME */
+/**********/
 
+.resume--body {
+  min-height: 100vh;
+}
 
+.resume--body > h1 {
+  margin-top: 70px;
+}
 
 
 

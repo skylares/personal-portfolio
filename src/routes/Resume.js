@@ -6,7 +6,9 @@ export default function Resume() {
   return(
     <main className="resume">
       <Header />
-      <h1>Resume</h1>
+      <section className='resume--body'>
+        <h1>Resume</h1>
+      </section>
       <Footer />
     </main>
   );
