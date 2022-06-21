@@ -8,6 +8,8 @@ import NodeLogo from '../assets/logo-node-purp.svg';
 
 export default function Skills() {
 
+  const [logoFlip, setLogoFlip] = useState(false);
+
   return (
     <section className="skills">
 
