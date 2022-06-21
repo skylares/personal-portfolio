@@ -9,3 +9,6 @@ export default function About() {
     </section>
   );
 }
+// I USE MY PASSION AND SKILLS TO CREATE DIGITAL PRODUCTS AND EXPERIENCES.
+ 
+

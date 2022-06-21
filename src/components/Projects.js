@@ -7,23 +7,21 @@ export default function Projects() {
       <h1 className='projects--title'>PROJECTS</h1>
       
       <div className='projects--container'>
-        <div className='projects--project -trivia'>
+        <a className='projects--project -trivia' href='https://skylares.github.io/trivia-app/'>
           <h4>Quizzical</h4>
           <hr className='line' />
           <p>A trivia game</p>
-        </div>
-        <div className='projects--project -portfolio'>
+        </a>
+        <a className='projects--project -portfolio' href='http://www.skylarkesselring.com'>
           <h4>Personal Website</h4>
           <hr className='line' />
           <p>The website you're currently on (thanks for visiting!)</p>
-        </div>
-        <div className='test-div'>
-        <div className='projects--project -tenzies'>
+        </a>
+        <a className='projects--project -tenzies' href='https://skylares.github.io/tenzies-game/'>
           <h4>Tenzies</h4>
           <hr className='line' />
           <p>Dice game</p>
-        </div>
-        </div>
+        </a>
       </div>
     </section>
   );
