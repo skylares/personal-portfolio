@@ -8,18 +8,62 @@ import NodeLogo from '../assets/logo-node-purp.svg';
 
 export default function Skills() {
 
-  const [logoFlip, setLogoFlip] = useState(false);
+  const [logoFlip, setLogoFlip] = useState(
+    {
+      html: false,
+      css: false,
+      js: false,
+      react: false,
+      node: false
+    }
+  );
+
+  const logoFlipper = ({target: {id}}) => {
+    setLogoFlip(prevLogoFlip => {
+      return {...prevLogoFlip, [id]: !prevLogoFlip[id]};
+    });
+    console.log(logoFlip);
+  };
 
   return (
     <section className="skills">
-
       <h1 className="skills--title">SKILLS</h1>
       <div className='skills--container'>
-        <img src={HtmlLogo} className='skills--icon html' alt='html logo'></img>
-        <img src={CssLogo} className='skills--icon css' alt='css logo'></img>
-        <img src={JavascriptLogo} className='skills--icon js' alt='javascript logo'></img>
-        <img src={ReactLogo} className='skills--icon react' alt='react logo'></img>
-        <img src={NodeLogo} className='skills--icon node' alt='node logo'></img>
+        <img  
+          src={HtmlLogo} 
+          onClick={logoFlipper}
+          className={logoFlip.html ? 'skills--icon html flipped' : 'skills--icon html'}
+          alt='html logo'
+          id='html'
+        />
+        <img 
+          src={CssLogo} 
+          onClick={logoFlipper}
+          className={logoFlip.css ? 'skills--icon css flipped' : 'skills--icon css'} 
+          alt='css logo'
+          id='css'
+        />
+        <img 
+          src={JavascriptLogo} 
+          onClick={logoFlipper}
+          className={logoFlip.js ? 'skills--icon js flipped' : 'skills--icon js'} 
+          alt='js logo'
+          id='js'
+        />
+        <img 
+          src={ReactLogo} 
+          onClick={logoFlipper}
+          className={logoFlip.react ? 'skills--icon react flipped' : 'skills--icon react'} 
+          alt='react logo'
+          id='react'
+        />
+        <img 
+          src={NodeLogo} 
+          onClick={logoFlipper}
+          className={logoFlip.node ? 'skills--icon node flipped' : 'skills--icon node'} 
+          alt='node logo'
+          id='node'
+        />
       </div>
     </section>
   );

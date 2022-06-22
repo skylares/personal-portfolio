@@ -206,23 +206,23 @@ h1 {
   margin: 100px 60px;
 }
 
-.skills--icon.js:hover {
-  filter: brightness(0) saturate(100%) invert(83%) sepia(56%) saturate(654%) hue-rotate(356deg) brightness(102%) contrast(94%);
-}
-
-.skills--icon.html:hover {
+.skills--icon.html:hover, .skills--icon.html.flipped {
   filter: brightness(0) saturate(100%) invert(37%) sepia(61%) saturate(1638%) hue-rotate(344deg) brightness(91%) contrast(94%);
 }
 
-.skills--icon.css:hover {
+.skills--icon.css:hover, .skills--icon.css.flipped {
   filter: brightness(0) saturate(100%) invert(27%) sepia(78%) saturate(3002%) hue-rotate(224deg) brightness(86%) contrast(108%);
 }
 
-.skills--icon.react:hover {
+.skills--icon.js:hover, .skills--icon.js.flipped {
+  filter: brightness(0) saturate(100%) invert(83%) sepia(56%) saturate(654%) hue-rotate(356deg) brightness(102%) contrast(94%);
+}
+
+.skills--icon.react:hover, .skills--icon.react.flipped {
   filter: brightness(0) saturate(100%) invert(74%) sepia(48%) saturate(4460%) hue-rotate(145deg) brightness(102%) contrast(103%);
 }
 
-.skills--icon.node:hover {
+.skills--icon.node:hover, .skills--icon.node.flipped {
   filter: brightness(0) saturate(100%) invert(79%) sepia(58%) saturate(462%) hue-rotate(36deg) brightness(85%) contrast(89%);
 }
 
