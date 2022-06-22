@@ -36,11 +36,11 @@ module.exports = {
         }
       },
       {
-        test: /\.(svg|ico)$/,
+        test: /\.(pdf|svg|ico)$/,
         use: [
           {
             loader: 'file-loader',
-            options: {
+            options: { 
               limit: 10000
             }
           }

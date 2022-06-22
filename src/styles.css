@@ -108,9 +108,7 @@ h1 {
 /********/
 
 .hero {
-  background-image: url(./assets/man-on-computer.png);
-  background-position: 90% 50%;
-  background-repeat: no-repeat;
+  background: url(./assets/man-on-computer.png) no-repeat 90% 50%;
   height: 100vh;
 }
 

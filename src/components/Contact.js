@@ -49,7 +49,6 @@ export default function Contact() {
         headers: {"Content-Type": "application/x-www-form-urlencoded"},
         body: encode({"form-name": "contact--form", ...formData})
       })
-        .then(() => alert("Submitted succesfully, thank you!"))
         .then(() => setFormSubmitted(false))
         .then(() => setFormFinished(true))
         .then(() => setFormData({name: "", email: "", message: ""}))
@@ -81,7 +80,7 @@ export default function Contact() {
               ></input>
             </div>
             <div>
-              {formErrors?.email ? <p className='error- -email'>Name required!</p> : <p className='error- -email'></p>}
+              {formErrors?.email ? <p className='error- -email'>Email required!</p> : <p className='error- -email'></p>}
               <input 
                 className='contact--form-input -email'
                 placeholder='Your email'

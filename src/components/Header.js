@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import resume from "../documents/resume.pdf";
 
 export default function Header() {
 
@@ -12,15 +12,16 @@ export default function Header() {
   return(
     <header className="header">
       <nav className='header--nav'>
-        <Link to="/" 
+        <a 
+          href="#hero" 
           className='nav--link -home'
           onClick={() => window.scrollTo(0,0)} 
           >{logoGenerator(["<","S","K","/",">"])}
-        </Link>
+        </a>
         <a href='#about' className='nav--link -about'>About</a>
         <a href='#projects' className='nav--link -projects'>Projects</a>
         <a href='#contact' className='nav--link -contact'>Contact</a>
-        <Link to="/Resume" className='nav--link -resume'>Resume</Link>
+        <a href={resume} className='nav--link -resume'>Resume</a>
       </nav>
     </header>
   );
