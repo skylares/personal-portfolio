@@ -28,8 +28,8 @@ export default function Projects() {
 
   const projects = [quizzical, portfolio, tenzies];
 
-  const projectDisplayer = (projects, i) => {
-    return projects.map((project) => (
+  const projectDisplayer = (projects) => {
+    return projects.map((project, i) => (
       <div className={`projects--project -${project.title}`} key={i}>
         <h4>{project.title}</h4>
         <hr className='line'/>
@@ -44,7 +44,7 @@ export default function Projects() {
     <section className="projects" id="projects">
       <h1 className='projects--title'>PROJECTS</h1>
       <div className='projects--container'>
-        {projectDisplayer(projects)}
+        {/* {projectDisplayer(projects)} */}
       </div>
     </section>
   );

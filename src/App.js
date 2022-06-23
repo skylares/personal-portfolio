@@ -9,25 +9,37 @@ import Footer from './components/Footer';
 
 export default function App() {
 
-  const [yPosition, setYPosition] = useState(0);
 
-  const trackYPos = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+  const handleWindowResize = () => setWidth(window.innerWidth);
+
+  useEffect(() => {
     if (typeof window !== 'undefined') {
-      setYPosition(window.scrollY);
+      window.addEventListener("resize", handleWindowResize);
     }
-  }
+    return () => window.removeEventListener("resize", handleWindowResize);
+
+  }, [width, handleWindowResize]);
+
+
+
+  const [yPosition, setYPosition] = useState(0);
+  const trackYPos = () => setYPosition(window.scrollY);
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', trackYPos);
-
-      return () => window.removeEventListener('scroll', trackYPos);
     }
+    return () => window.removeEventListener('scroll', trackYPos);
+
   }, [yPosition, trackYPos]);
+
+  
 
   return (
     <div className="container">
-      <Header />
-      <Hero yPosition={yPosition}/>
+      <Header width= {width}/>
+      <Hero yPosition={yPosition} width= {width}/>
       <About />
       <Skills />
       <Projects />
