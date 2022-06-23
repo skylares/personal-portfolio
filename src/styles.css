@@ -630,18 +630,46 @@ h1 {
 .footer {
   background-color: var(--main-color);
   height: 75px;
+  display: flex;
+
 }
 
-.footer > p {
+.footer--text-container {
+  margin: 15px auto 10px 25px;
+}
+
+.footer--text-container > p {
   color: var(--background-color);
   font-size: 1rem;
-  padding-bottom: 10px;
 }
 
 .footer--creator {
-  padding-top: 15px;
+  margin-bottom: 5px;
 }
 
 .footer--link {
   color: #f5a02f;
+}
+
+.footer--shortcut-img {
+  width: 35px;
+  height: 35px;
+}
+
+.footer--shortcut {
+  margin: 20px 20px 0 0;
+}
+
+/* footer-mobile */
+
+@media (max-width: 700px) {
+
+  .footer--text-container {
+    margin: 12px auto 5px 25px;
+  }
+
+  .footer--text-container > p {
+    font-size: 0.8rem;
+  }
+
 }
