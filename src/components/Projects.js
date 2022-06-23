@@ -34,8 +34,8 @@ export default function Projects() {
         <h4>{project.title}</h4>
         <hr className='line'/>
         <p>{project.description}</p>
-        <a href={project.demoUrl} target="_blank">Link to live demo</a>
-        <a href={project.gitUrl} target="_blank">Link to github repo</a>
+        <a href={project.demoUrl} target="_blank">live demo</a>
+        <a href={project.gitUrl} target="_blank">github repo</a>
       </div>
     ));
   };
@@ -44,7 +44,7 @@ export default function Projects() {
     <section className="projects" id="projects">
       <h1 className='projects--title'>PROJECTS</h1>
       <div className='projects--container'>
-        {/* {projectDisplayer(projects)} */}
+        {projectDisplayer(projects)}
       </div>
     </section>
   );

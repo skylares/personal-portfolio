@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState} from 'react';
 
 import HtmlLogo from '../assets/logo-html-purp.svg';
 import CssLogo from '../assets/logo-css-purp.svg';

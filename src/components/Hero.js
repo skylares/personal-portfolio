@@ -16,12 +16,14 @@ export default function Hero({yPosition, width}) {
 
   return(
     <section className="hero" id="hero" style={style}>
-      <div className={yPosition < 800 ? "hero--title-section" : "hero--title-section-hidden"}>
+      {yPosition < 800 &&
+      <div className="hero--title-section">
         <h3 className="hero--introduction">Hello, my name is</h3>
         <h1 className="hero--name">SKYLAR</h1>
         <img src={fancyUnderline} className="hero--underline" alt='fancy underline for name'/>
         <p className="hero--description">I'm a frontend developer who is passionate about coding beautiful websites</p>
       </div>  
+      }
     </section>
   );
 }
