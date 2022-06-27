@@ -526,11 +526,13 @@ h1 {
   margin-bottom: 75px;
 }
 
-.contact--subtitle > a {
+.contact--subtitle-email {
   border-bottom: 2px solid #f59f2f77;
+  text-decoration: none;
+  color: var(--dark-text);
 }
 
-.contact--subtitle > a:hover {
+.contact--subtitle-email:hover {
   border-bottom: 2px solid var(--main-accent);
   cursor: pointer;
 }
