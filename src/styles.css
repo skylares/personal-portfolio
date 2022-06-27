@@ -74,6 +74,7 @@ h1 {
 }
 
 .nav--link {
+  color: var(--dark-text);
   text-decoration: none;
   margin-left: 7vw;
   font-size: 1.25rem;
@@ -672,30 +673,4 @@ h1 {
     font-size: 0.8rem;
   }
 
-}
-
-
-
-.hero--down-arrow {
-  width: 50px;
-  height: 50px;
-  position: relative;
-  z-index: 10;
-  top: 90vh;
-  left: 49vw;
-  animation-name: arrowbounce;
-  animation-duration: 350ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: cubic-bezier(0.1, 0, 1.0, 0);;
-  animation-direction: alternate;
-}
-
-@keyframes arrowbounce {
-  from {
-    top: 90vh;
-  }
-
-  to {
-    top: 93vh;
-  }
 }

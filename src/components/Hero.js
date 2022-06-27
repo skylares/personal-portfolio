@@ -2,7 +2,6 @@ import React from 'react';
 import heroWave from '../assets/heroWave.svg';
 import fancyUnderline from '../assets/fancy-underline.svg'
 import computerMan from '../assets/man-on-computer.png';
-import downArrow from '../assets/down-arrow.svg';
 
 export default function Hero({yPosition, width}) {
 
@@ -25,7 +24,6 @@ export default function Hero({yPosition, width}) {
         <p className="hero--description">I'm a frontend developer who is passionate about coding beautiful websites</p>
       </div>  
       }
-      <img className='hero--down-arrow' src={downArrow}/>
     </section>
   );
 }
