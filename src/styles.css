@@ -453,7 +453,7 @@ h1 {
 
 .projects--project > a {
   text-decoration: none;
-  border: 1px solid var(--main-color);
+  border: 2px solid var(--background-color);
   background-color: var(--main-color);
   border-radius: 5px;
   color: var(--background-color);
@@ -464,6 +464,10 @@ h1 {
   margin-bottom: 15px;
   font-family: "Latos", sans-serif;
   font-weight: 400;
+}
+
+.projects--project > a:hover {
+  border: 2px solid var(--main-accent);
 }
 
 .line {
