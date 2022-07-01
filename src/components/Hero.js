@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import heroWave from '../assets/heroWave.svg';
 import fancyUnderline from '../assets/fancy-underline.svg'
 import computerMan from '../assets/man-on-computer.png';
