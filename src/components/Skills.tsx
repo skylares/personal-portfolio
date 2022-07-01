@@ -8,7 +8,15 @@ import NodeLogo from '../assets/logo-node-purp.svg';
 
 export default function Skills() {
 
-  const [logoFlip, setLogoFlip] = useState(
+  interface LogoState {
+    html: boolean;
+    css: boolean;
+    js: boolean;
+    react: boolean;
+    node: boolean;
+  }
+
+  const [logoFlip, setLogoFlip] = useState<LogoState>(
     {
       html: false,
       css: false,
@@ -18,9 +26,10 @@ export default function Skills() {
     }
   );
 
-  const logoFlipper = ({target: {id}}) => {
-    setLogoFlip(prevLogoFlip => {
-      return {...prevLogoFlip, [id]: !prevLogoFlip[id]};
+  const logoFlipper = (event: any) => {
+    const {target: {id}} = event;
+    setLogoFlip((prevLogoFlip: LogoState) => {
+      return {...prevLogoFlip, [id]: !prevLogoFlip[id as keyof LogoState]};
     });
     console.log(logoFlip);
   };
@@ -68,23 +77,3 @@ export default function Skills() {
     </section>
   );
 }
-
-  // const myRef = useRef(null);
-
-  // useEffect(() => {
-
-  //   const observer = new IntersectionObserver((entries) => {
-  //     const entry = entries[0];
-  //     if (entry.isIntersecting) {
-  //       setSkillsVisible(true);
-  //     }
-  //     else {
-  //       setSkillsVisible(false);
-  //     }
-
-  //   }, {
-  //     rootMargin: '-40px 0% 0% 0%',
-  //     threshold: [1.0]
-  //   });   
-  //   observer.observe(myRef.current);
-  // }, []);

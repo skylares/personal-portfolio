@@ -4,7 +4,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   
-  entry: './src/index.js',
+  entry: './src/index.tsx',
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist')
@@ -20,6 +20,15 @@ module.exports = {
     new CleanWebpackPlugin()
   ],
 
+  resolve: {
+    extensions: [
+      '.tsx',
+      '.ts',
+      '.js'
+    ],
+  },
+
+
   module: {
     rules: [
       {
@@ -34,6 +43,11 @@ module.exports = {
             ]
           }
         }
+      },
+      {
+        test: /\.ts(x)?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/
       },
       {
         test: /\.(pdf|svg|ico|png)$/,

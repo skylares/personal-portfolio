@@ -1,9 +1,14 @@
-import React, { useEffect, useLayoutEffect } from 'react';
+import React from 'react';
 import heroWave from '../assets/heroWave.svg';
 import fancyUnderline from '../assets/fancy-underline.svg'
 import computerMan from '../assets/man-on-computer.png';
 
-export default function Hero({yPosition, width}) {
+type HeroProps = {
+  yPosition?: number | any;
+  width?: number | any;
+};
+
+export default function Hero({yPosition, width}: HeroProps) {
 
 
   const style = {
@@ -14,7 +19,7 @@ export default function Hero({yPosition, width}) {
     
   };
 
-  return(
+  return (
     <section className="hero" id="hero" style={style}>
       {yPosition < 800 &&
       <div className="hero--title-section">

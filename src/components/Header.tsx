@@ -1,17 +1,21 @@
-import React, {useState, useRef} from 'react';
-import resume from "../documents/resume.pdf";
+import React, {useState} from 'react';
+import resume from '../documents/skylar_resume_july_2022.pdf';
 
-export default function Header({width}) {
+interface HeaderProps {
+  width: number | undefined;
+}
+
+export default function Header({width}: HeaderProps) {
 
   const [navOpen, setNavOpen] = useState(false);
 
-  const logoGenerator = (titleArray) => {
+  const logoGenerator = (titleArray: string[]) => {
     return titleArray.map((char, i) => (
       <span key={i}className='header--home-char'>{char}</span>
     ))
   };
 
-  if (width < 750) {
+  if (width && width < 750) {
     return (
       <header className="header--mobile">
         <nav className='header--nav-mobile'>

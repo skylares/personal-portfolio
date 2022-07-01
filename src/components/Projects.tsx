@@ -2,6 +2,14 @@ import React from 'react';
 
 export default function Projects() {
 
+  interface ProjectType {
+    title: string;
+    name: string;
+    description: string;
+    demoUrl: string;
+    gitUrl: string;
+  }
+
   const quizzical = {
     title: "Quizzical",
     name: "quizzical",
@@ -28,8 +36,8 @@ export default function Projects() {
 
   const projects = [quizzical, portfolio, tenzies];
 
-  const projectDisplayer = (projects) => {
-    return projects.map((project, i) => (
+  const projectDisplayer = (projects: ProjectType[]) => {
+    return projects.map((project: ProjectType, i: number) => (
       <div className={`projects--project -${project.title}`} key={i}>
         <h4>{project.title}</h4>
         <hr className='line'/>

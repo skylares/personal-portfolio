@@ -2,32 +2,44 @@ import React, {useEffect, useState} from 'react';
 
 export default function Contact() {
 
-  const [formData, setFormData] = useState(
+  interface ContactForm {
+    name?: string,
+    email?: string,
+    message?: string,
+  }
+
+  const [formData, setFormData] = useState<ContactForm>(
     {
       name: "", 
       email: "", 
       message: "",
     }
   );
-  const [formErrors, setFormErrors] = useState({});
+  const [formErrors, setFormErrors] = useState<ContactForm>(
+    {
+      name: "",
+      email: "",
+      message: "",
+    }
+  );
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formFinished, setFormFinished] = useState(false);
 
-  const handleFormInput = ({target}) => setFormData(prevFormData => (
+  const handleFormInput = ({target}: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setFormData(prevFormData => (
     {
       ...prevFormData,
       [target.name]: target.value
     }
   )); 
 
-  const handleFormSubmit = e => {
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     setFormErrors(validate(formData));
     setFormSubmitted(true);
     e.preventDefault();
   };
 
-  const validate = formData => {
-    let errors = {};
+  const validate = (formData: ContactForm) => {
+    let errors: ContactForm = {};
     if(!formData.name) errors.name = "Name required";
     if(!formData.email) errors.email = "Email required";
     if(!formData.message) errors.message = "Message required";
@@ -35,7 +47,7 @@ export default function Contact() {
     return errors;
   }
 
-  const encode = (data) => {
+  const encode = (data: any) => {
     return Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
       .join("&");
