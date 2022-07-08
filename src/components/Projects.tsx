@@ -21,7 +21,7 @@ export default function Projects() {
   const portfolio = {
     title: "Personal Portfolio",
     name: "portfolio",
-    description: "The website you're currently on (thanks for visiting!)",
+    description: "The website you're currently on (thanks for visiting!) Built with React.",
     demoUrl: "http://www.skylarkesselring.com",
     gitUrl: "https://github.com/skylares/personal-portfolio",
   } 
@@ -29,7 +29,7 @@ export default function Projects() {
   const tenzies = {
     title: "Tenzies",
     name: "tenzies",
-    description: "Dice game",
+    description: "A responsive dice game. Clicking any dice will stop them from being rerolled. Goal is to get all 8 dice on the same face.",
     demoUrl: "https://skylares.github.io/tenzies-game/",
     gitUrl: "https://github.com/skylares/tenzies-game",
   }
