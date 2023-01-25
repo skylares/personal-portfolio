@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import resume from '../documents/skylar_resume_july_2022.pdf';
+import resume from '../documents/skylar_resume.pdf';
 
 interface HeaderProps {
   width: number | undefined;
