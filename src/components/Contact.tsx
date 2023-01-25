@@ -71,7 +71,7 @@ export default function Contact() {
   return(
     <section className="contact" id="contact">
       <h1 className='contact--title'>GET IN TOUCH</h1>
-      <p className='contact--subtitle'>Feel free to contact me by <a href='mailto: skylarkesselring@gmail.com' className='contact--subtitle-email'>email</a> or with the form below.</p>
+      <p className='contact--subtitle'>Feel free to contact me by <a href='mailto: kesselring.skylar@gmail.com' className='contact--subtitle-email'>email</a> or with the form below.</p>
 
       {formFinished 
       ?  

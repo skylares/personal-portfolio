@@ -117,7 +117,7 @@ h1 {
   background-color: var(--main-accent);
 }
 
-/* nav-mobile */
+/* header-mobile */
 
 .header--nav-mobile {
   position: fixed;
@@ -205,7 +205,7 @@ h1 {
 .hero--title-section {
   position: fixed;
   z-index: -1;
-  padding-top: 180px;
+  padding-top: 250px;
 }
 
 .hero--name {
@@ -223,8 +223,9 @@ h1 {
 }
 
 .hero--description {
-  font-size: 1.6rem;
-  margin-top: 50px;
+  color: var(--dark-text);
+  font-size: 1.7rem;
+  margin-top: 15px;
   width: 450px;
   line-height: 150%;
   letter-spacing: -0.05rem;
@@ -409,13 +410,14 @@ h1 {
 .projects {
   padding-top: 10vh;
   min-height: 100vh;
-  background: var(--main-accent);
+  background: var(--main-color);
   color: var(--dark-text);
   flex-direction: column;
 }
 
 .projects--title {
   margin-bottom: 15vh;
+  color: var(--background-color);
 }
 
 .projects--container {
@@ -428,8 +430,8 @@ h1 {
   padding: 20px;
   text-align: center;
   color: var(--dark-text);
-  width: 350px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
   background-color: var(--background-color);
   margin: 0px 40px;
   font-size: 2rem;
@@ -445,10 +447,14 @@ h1 {
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 32px 12px rgba(0,0,0,0.34);
 }
 
+.projects--project > h4 {
+  font-size: 28px;
+}
+
 .projects--project > p {
-  margin: 5% 0 auto 0;
-  font-size: 1.35rem;
-  font-family: "Latos", sans-serif;
+  margin: 5% 0 0 0;
+  font-size: 1.25rem;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .projects--project > a {
@@ -462,8 +468,7 @@ h1 {
   padding: 5px 0;
   font-size: 1.5rem;
   margin-bottom: 15px;
-  font-family: "Latos", sans-serif;
-  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .projects--project > a:hover {
@@ -471,10 +476,10 @@ h1 {
 }
 
 .line {
-  background-color: var(--main-color);
+  background-color: var(--main-accent);
   width: 150px;
   height: 3px;
-  border: 1px solid var(--main-color);
+  border: 1px solid var(--main-accent);
   border-radius: 100px;
 }
 

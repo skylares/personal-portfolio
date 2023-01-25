@@ -3,54 +3,49 @@ import React from 'react';
 export default function Projects() {
 
   interface ProjectType {
-    title: string;
-    name: string;
+    company: string;
+    startDate: string;
+    endDate: string;
     description: string;
-    demoUrl: string;
-    gitUrl: string;
   }
 
-  const quizzical = {
-    title: "Quizzical",
-    name: "quizzical",
-    description: "A multiple-choice trivia game. You can select the category and difficulty, along with the number of questions. Questions are pulled from an open-source API, opentdb.",
-    demoUrl: "https://skylares.github.io/trivia-app/",
-    gitUrl: "https://github.com/skylares/trivia-app",
+  const paperlessEnvironments = {
+    company: "Paperless Environments",
+    startDate: "Apr 2020",
+    endDate: "Present",
+    description: "Helped construction companies manage and organize documents and information in a central repository. Assisted clients in managing a documents lifecycle from creation to removal and everything inbetween.",
   }
 
-  const portfolio = {
-    title: "Personal Portfolio",
-    name: "portfolio",
-    description: "The website you're currently on (thanks for visiting!) Built with React.",
-    demoUrl: "http://www.skylarkesselring.com",
-    gitUrl: "https://github.com/skylares/personal-portfolio",
+  const capco = {
+    company: "Capco",
+    startDate: "Jun 2018",
+    endDate: "Feb 2020",
+    description: "Utilized cutting-edge technologies, advanced methodologies and a network of industry partners to quickly and effectively address insurance client's problems. Rapidly prototyped solutions to quickly iterate designs and achieve the best product in the shortest possible time.",
   } 
 
-  const tenzies = {
-    title: "Tenzies",
-    name: "tenzies",
-    description: "A responsive dice game. Clicking any dice will stop them from being rerolled. Goal is to get all 8 dice on the same face.",
-    demoUrl: "https://skylares.github.io/tenzies-game/",
-    gitUrl: "https://github.com/skylares/tenzies-game",
+  const sangoma = {
+    company: "Sangoma",
+    startDate: "Feb 2017",
+    endDate: "May 2018",
+    description: "Provide resturants with a unified communication system to address the issues of food service in the modern digital age. Helps to bring together online orders, phone reservations, and third-party food deliveries into one service.",
   }
 
-  const projects = [quizzical, portfolio, tenzies];
+  const projects = [sangoma, capco, paperlessEnvironments];
 
   const projectDisplayer = (projects: ProjectType[]) => {
     return projects.map((project: ProjectType, i: number) => (
-      <div className={`projects--project -${project.title}`} key={i}>
-        <h4>{project.title}</h4>
+      <div className={`projects--project -${project.company}`} key={i}>
+        <h4>{project.company}</h4>
+        <p className='project--date'>{`${project.startDate} - ${project.endDate}`}</p>
         <hr className='line'/>
         <p>{project.description}</p>
-        <a href={project.demoUrl} target="_blank">live demo</a>
-        <a href={project.gitUrl} target="_blank">github repo</a>
       </div>
     ));
   };
 
-  return(
+  return (
     <section className="projects" id="projects">
-      <h1 className='projects--title'>PROJECTS</h1>
+      <h1 className='projects--title'>EXPERIENCE</h1>
       <div className='projects--container'>
         {projectDisplayer(projects)}
       </div>
